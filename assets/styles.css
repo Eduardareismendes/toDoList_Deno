@@ -1,0 +1,380 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&display=swap");
+
+:root {
+  --fundo: #e2ece6;
+  --fundo-suave: #eff5f1;
+  --superficie: #ffffff;
+  --tinta: #0f2a1d;
+  --tinta-suave: #3f5a4c;
+  --tinta-apagada: #7a9285;
+  --borda: #c9dbd0;
+  --borda-forte: #9fbcab;
+  --primaria: #0b6b3a;
+  --primaria-hover: #085830;
+  --perigo-fundo: #fde8e8;
+  --perigo-texto: #a12626;
+  --perigo-hover: #fbd0d0;
+  --raio: 12px;
+  --raio-p: 8px;
+  --sombra: 0 1px 2px rgba(11, 107, 58, 0.08);
+  --sombra-hover: 0 8px 18px rgba(11, 107, 58, 0.16);
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 400px at 50% -120px, #f4f9f6 0%, transparent 70%),
+    var(--fundo);
+  color: var(--tinta);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(11, 107, 58, 0.35);
+  outline-offset: 2px;
+}
+
+body > div {
+  min-height: 100vh;
+}
+
+/* ---------- Título ---------- */
+
+h1 {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 56px 24px 28px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: var(--tinta);
+  font-family:
+    "Bricolage Grotesque", Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ---------- Container ---------- */
+
+.todo-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+/* ---------- Formulário ---------- */
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  padding: 10px;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+}
+
+.todo-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--raio-p);
+  outline: none;
+  background: var(--fundo-suave);
+  color: var(--tinta);
+  transition: border-color 150ms ease, background 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.todo-form input::placeholder {
+  color: var(--tinta-apagada);
+}
+
+.todo-form input[type="date"] {
+  flex: 0 0 auto;
+  color: var(--tinta-suave);
+}
+
+.todo-form input:focus {
+  background: var(--superficie);
+  border-color: var(--primaria);
+  box-shadow: 0 0 0 3px rgba(11, 107, 58, 0.15);
+}
+
+.todo-form button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: var(--raio-p);
+  background: var(--primaria);
+  color: #ffffff;
+  font-weight: 600;
+  transition: background 150ms ease, transform 100ms ease;
+}
+
+.todo-form button:hover {
+  background: var(--primaria-hover);
+}
+
+.todo-form button:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Lista ---------- */
+
+.todo-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-container li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--primaria);
+  border-radius: var(--raio);
+  background: var(--superficie);
+  box-shadow: var(--sombra);
+  transition: box-shadow 150ms ease, transform 150ms ease,
+    border-color 150ms ease;
+}
+
+.todo-container li:hover {
+  box-shadow: var(--sombra-hover);
+  transform: translateY(-1px);
+}
+
+.todo-container li span {
+  flex: 1;
+  color: var(--tinta);
+  font-weight: 500;
+}
+
+.todo-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.todo-date {
+  font-size: 13px;
+  color: var(--tinta-apagada);
+}
+
+/* ---------- Botões da tarefa ---------- */
+
+.todo-container li button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--fundo-suave);
+  color: var(--tinta-suave);
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.todo-container li button:hover {
+  background: var(--fundo);
+}
+
+.todo-container li .btn-editar {
+  background: var(--fundo-suave);
+  color: var(--primaria);
+}
+
+.todo-container li .btn-editar:hover {
+  background: var(--fundo);
+}
+
+.todo-container li .btn-salvar {
+  background: var(--primaria);
+  color: #ffffff;
+}
+
+.todo-container li .btn-salvar:hover {
+  background: var(--primaria-hover);
+}
+
+.todo-container li .btn-cancelar {
+  background: #f1f5f3;
+  color: var(--tinta-suave);
+}
+
+.todo-container li .btn-cancelar:hover {
+  background: #e3ebe7;
+}
+
+.todo-container li .btn-excluir {
+  background: var(--perigo-fundo);
+  color: var(--perigo-texto);
+}
+
+.todo-container li .btn-excluir:hover {
+  background: var(--perigo-hover);
+}
+
+/* ---------- Checkbox ---------- */
+
+.todo-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--borda-forte);
+  border-radius: 50%;
+  background: var(--superficie);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+
+.todo-checkbox::after {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transform: rotate(-45deg) scale(0);
+  margin-top: -2px;
+  transition: transform 120ms ease;
+}
+
+.todo-checkbox:hover {
+  border-color: var(--primaria);
+}
+
+.todo-checkbox:checked {
+  background: var(--primaria);
+  border-color: var(--primaria);
+}
+
+.todo-checkbox:checked::after {
+  transform: rotate(-45deg) scale(1);
+}
+
+/* ---------- Tarefa concluída ---------- */
+
+.todo-container li:has(.todo-checkbox:checked) {
+  background: #f6faf7;
+  border-left-color: var(--borda-forte);
+  box-shadow: none;
+}
+
+.todo-container li:has(.todo-checkbox:checked) span {
+  color: var(--tinta-apagada);
+}
+
+.todo-container li:has(.todo-checkbox:checked) .todo-date {
+  color: var(--borda-forte);
+}
+
+/* ---------- Campos de edição ---------- */
+
+.todo-container li input[type="text"],
+.todo-container li input[type="date"] {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--borda-forte);
+  border-radius: 6px;
+  outline: none;
+  color: var(--tinta);
+  background: var(--superficie);
+}
+
+.todo-container li input[type="date"] {
+  flex: 0 0 auto;
+}
+
+.todo-container li input[type="text"]:focus,
+.todo-container li input[type="date"]:focus {
+  border-color: var(--primaria);
+  box-shadow: 0 0 0 3px rgba(11, 107, 58, 0.15);
+}
+
+/* ---------- Telas menores ---------- */
+
+@media (max-width: 600px) {
+  h1 {
+    padding: 36px 16px 20px;
+    font-size: 30px;
+  }
+
+  .todo-container {
+    padding: 0 16px 40px;
+  }
+
+  .todo-form {
+    flex-direction: column;
+  }
+
+  .todo-form input[type="date"] {
+    flex: 1 1 auto;
+  }
+
+  .todo-form button {
+    width: 100%;
+  }
+
+  .todo-container li {
+    flex-wrap: wrap;
+  }
+
+  .todo-container li span {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .todo-container li .btn-editar,
+  .todo-container li .btn-salvar,
+  .todo-container li .btn-cancelar,
+  .todo-container li .btn-excluir {
+    padding: 7px 10px;
+  }
+}
+
+/* ---------- Movimento reduzido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

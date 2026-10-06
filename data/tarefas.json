@@ -1,0 +1,44 @@
+[
+    {
+        "id": 2,
+        "titulo": "Estudar JavaScript",
+        "concluida": false,
+        "dataConclusao": "2026-10-06"
+    },
+    {
+        "id": 3,
+        "titulo": "Estudar Fresh",
+        "concluida": false,
+        "dataConclusao": "2026-10-07"
+    },
+    {
+        "id": 7,
+        "titulo": "Ensaiar apresentação",
+        "concluida": true,
+        "dataConclusao": "2026-10-01"
+    },
+    {
+        "id": 8,
+        "titulo": "Trabalho de IA",
+        "concluida": false,
+        "dataConclusao": "2026-10-02"
+    },
+    {
+        "id": 9,
+        "titulo": "Trabalho de Sistemas distribuidos",
+        "concluida": false,
+        "dataConclusao": "2026-10-08"
+    },
+    {
+        "id": 10,
+        "titulo": "Fazer os slides Deno",
+        "concluida": true,
+        "dataConclusao": "2026-10-05"
+    },
+    {
+        "id": 11,
+        "titulo": "Ensair apresentação de Deno",
+        "concluida": false,
+        "dataConclusao": "2026-11-24"
+    }
+]
