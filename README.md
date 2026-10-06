@@ -38,7 +38,7 @@ deno --version
 Clone o projeto e entre na pasta:
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/Eduardareismendes/toDoList_Deno.git
 cd todo-deno
 ```
 
